@@ -9,7 +9,7 @@
 	- Information about the data 
 	- Information about the users
 	- Document the specifications
-=============================================================================================================================
+---
 
 ## PROJECT SECTIONS:
 
@@ -27,7 +27,7 @@
 
 > _SECTION (G)_ __Widget Grouping__: This will be a table that allows you to pick which widgets go in which group. This will be helpful in determining the GUI layout. 
 
---
+---
 
 #### DOCUMENTING SPECIFICATION REQUIREMENTS
 
@@ -41,7 +41,7 @@
 
 > __Data Dictionary__ --> This is a detailed list of the data fields the application will deal with and their parameters. These can get quite lengthy but are a critical referenceas the application expands and the data gets utilized in other contexts.
 
---
+---
 ### EXAMPLE OF HOW THE TXT FILE WILL LOOK ONCE SUBMITTED:
 
 ```
@@ -156,5 +156,5 @@ Data Dictionary
 |
 +------------+----------+------+--------------+---------------------+
 ```
---
+---
 
