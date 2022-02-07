@@ -17,7 +17,7 @@ class LabelInput(tk.Frame):
 			If left blank, ttk.Entry will be used.
 
 		:param input_var:  This is a Tkinter variable to assign to the input.
-			 It's optional, since some widgets don't use variables.
+			It's optional, since some widgets don't use variables.
 
 		:param input_args: This is an optional dictionary of any additional
 			arguments for the input constructor
@@ -47,30 +47,30 @@ class LabelInput(tk.Frame):
 		self.columnconfigure(0, weight=1)
 
 
-    def grid(self, sticky=(tk.E + tk.W), **kwargs):
-        super().grid(sticky=sticky, **kwargs)
+	def grid(self, sticky=(tk.E + tk.W), **kwargs):
+		super().grid(sticky=sticky, **kwargs)
 
-    def get(self):
-        if self.variable:
-            return self.variable.get()
-        elif type(self.input) == tk.Text:
-            return self.input.get('1.0', tk.END)
-        else:
-            return self.input.get()
+	def get(self):
+		if self.variable:
+			return self.variable.get()
+		elif type(self.input) == tk.Text:
+			return self.input.get('1.0', tk.END)
+		else:
+			return self.input.get()
 
-    def set(self, value, *args, **kwargs):
-        if type(self.variable) == tk.BooleanVar:
-                self.variable.set(bool(value))
-        elif self.variable:
-                self.variable.set(value, *args, **kwargs)
-        elif type(self.input).__name__.endswith('button'):
-            if value:
-                self.input.select()
-            else:
-                self.input.deselect()
-        elif type(self.input) == tk.Text:
-            self.input.delete('1.0', tk.END)
-            self.input.insert('1.0', value)
-        else:
-            self.input.delete(0, tk.END)
-            self.input.insert(0, value)
+	def set(self, value, *args, **kwargs):
+		if type(self.variable) == tk.BooleanVar:
+				self.variable.set(bool(value))
+		elif self.variable:
+				self.variable.set(value, *args, **kwargs)
+		elif type(self.input).__name__.endswith('button'):
+			if value:
+				self.input.select()
+			else:
+				self.input.deselect()
+		elif type(self.input) == tk.Text:
+			self.input.delete('1.0', tk.END)
+			self.input.insert('1.0', value)
+		else:
+			self.input.delete(0, tk.END)
+			self.input.insert(0, value)
